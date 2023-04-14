@@ -2,7 +2,7 @@
 
 ## 예제 제공 
 - REST API를 활용한 Chat GPT 연동 ( 완 ) 
-- WebSocket API를 활용한 Chat GPT 연동 ( 진행중 ) 
+- WebSocket 활용한 Chat GPT 연동 ( 진행중 ) 
 
 
 # Chat GPT Open API 내 Completion 
