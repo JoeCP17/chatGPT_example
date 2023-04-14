@@ -15,6 +15,8 @@
 
 
 ## Completion Chat
-- 위 사항과는 다르게 이전 답변에 대해서도 기록을 하기때문에 재 요청시 이전 답변들과 더불어 답변을 준다.![스크린샷 2023-04-15 오전 2 06 17](https://user-images.githubusercontent.com/76832303/232111022-de36af7b-9d92-4b42-9583-fe28ac54fd1e.png)
+- 위 사항과는 다르게 이전 답변에 대해서도 기록을 하기때문에 재 요청시 이전 답변들과 더불어 답변을 준다.
+
+![스크린샷 2023-04-15 오전 2 06 17](https://user-images.githubusercontent.com/76832303/232111022-de36af7b-9d92-4b42-9583-fe28ac54fd1e.png)
 ![image](https://user-images.githubusercontent.com/76832303/232111079-55263ced-7d5a-43e2-bf17-5d952fe67ec7.png)
 
