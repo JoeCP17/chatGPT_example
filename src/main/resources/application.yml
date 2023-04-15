@@ -19,3 +19,6 @@ spring:
 logging.level:
   org.hibernate.SQL: debug
   org.hibernate.type: trace
+
+gpt:
+  token: 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
