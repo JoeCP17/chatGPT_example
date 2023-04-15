@@ -62,8 +62,6 @@ public class GPTChatRestService {
     return response;
   }
 
-
-
   private void saveQuestion(String question, GPTAnswer answer) {
     GPTQuestion questionEntity = new GPTQuestion(question, answer);
     questionRepository.save(questionEntity);

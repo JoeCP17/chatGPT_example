@@ -1,6 +1,5 @@
 package com.chatgpt.example.service;
 
-import com.chatgpt.example.dto.request.GPTCompletionChatRequest;
 import com.chatgpt.example.dto.request.GPTCompletionRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.theokanning.openai.service.OpenAiService;
@@ -16,7 +15,7 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class StreamChatHandler extends TextWebSocketHandler {
+public class StreamCompletionHandler extends TextWebSocketHandler {
 
   private final HashMap<String, WebSocketSession> sessionHashMap;
 

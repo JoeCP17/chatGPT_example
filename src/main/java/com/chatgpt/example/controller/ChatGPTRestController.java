@@ -19,13 +19,13 @@ public class ChatGPTRestController {
   private final GPTChatRestService gptChatRestService;
 
   @PostMapping("/completion")
-  public CompletionResponse completion(@RequestBody GPTCompletionRequest gptCompletionRequest) {
+  public CompletionResponse completion(final @RequestBody GPTCompletionRequest gptCompletionRequest) {
 
     return gptChatRestService.completion(gptCompletionRequest);
   }
 
   @PostMapping("/completion/chat")
-  public CompletionChatResponse completionChat(@RequestBody GPTCompletionChatRequest gptCompletionChatRequest) {
+  public CompletionChatResponse completionChat(final @RequestBody GPTCompletionChatRequest gptCompletionChatRequest) {
 
     return gptChatRestService.completionChat(gptCompletionChatRequest);
   }
