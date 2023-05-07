@@ -31,7 +31,7 @@ Socket 에서 Completion 하나만 구현한 이유는 Handler내 서드파티�
 
 2023.05.08 
 
-Kotlin으로 구현한 내용을 추가합니다. 
+Kotlin으로 구현한 내용을 추가중에 있습니다. 
 
 # 사용 방법
 
