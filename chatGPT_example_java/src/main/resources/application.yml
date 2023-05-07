@@ -21,4 +21,4 @@ logging.level:
   org.hibernate.type: trace
 
 gpt:
-  token: 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
+  token:
