@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class ChatGPTConfig {
 
-    @Value("\${chatgpt.apiKey}")
+    @Value("\${gpt.token}")
     private val apiKey: String? = null
 
     @Bean

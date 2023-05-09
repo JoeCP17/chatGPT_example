@@ -1,5 +1,7 @@
 package com.example.chatgpt_example_kotlin.service
 
+import com.example.chatgpt_example_kotlin.dto.CompletionChatDTO
+import com.example.chatgpt_example_kotlin.dto.CompletionChatResponseDTO
 import com.example.chatgpt_example_kotlin.dto.CompletionRequestDTO
 import com.example.chatgpt_example_kotlin.dto.CompletionResponseDTO
 import com.example.chatgpt_example_kotlin.entity.answer.Answer
@@ -34,6 +36,17 @@ class GPTChatService(
         return response
     }
 
+    @Transactional
+    fun completionChat(request: CompletionChatDTO): CompletionChatResponseDTO {
+        val chatCompletionResult = getChatCompletionResult(request)
+
+        val messages = makeMessagesByChatResponse(chatCompletionResult)
+
+        saveQuestion(request.message, saveAnswer(messages))
+
+        return chatCompletionResult
+    }
+
 
     private fun saveAnswer(answerList: List<String>): Answer {
         val answer = answerList.stream().collect(Collectors.joining())
@@ -44,4 +57,17 @@ class GPTChatService(
     private fun saveQuestion(question: String, answerEntity: Answer) {
         questionRepository.save(Question(question = question, answer = answerEntity))
     }
+
+    private fun makeMessagesByChatResponse(response: CompletionChatResponseDTO): List<String> {
+        return response.messages.stream()
+                .map { it.message }
+                .collect(Collectors.toList())
+    }
+
+    private fun getChatCompletionResult(request: CompletionChatDTO): CompletionChatResponseDTO {
+        val chatCompletionResult = openAiService.createChatCompletion(CompletionChatDTO.toCompletionChatRequest(request))
+
+        return CompletionChatResponseDTO.of(chatCompletionResult)
+    }
+
 }

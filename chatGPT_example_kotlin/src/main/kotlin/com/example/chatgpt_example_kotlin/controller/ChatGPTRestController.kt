@@ -1,5 +1,7 @@
 package com.example.chatgpt_example_kotlin.controller
 
+import com.example.chatgpt_example_kotlin.dto.CompletionChatDTO
+import com.example.chatgpt_example_kotlin.dto.CompletionChatResponseDTO
 import com.example.chatgpt_example_kotlin.dto.CompletionRequestDTO
 import com.example.chatgpt_example_kotlin.dto.CompletionResponseDTO
 import com.example.chatgpt_example_kotlin.service.GPTChatService
@@ -19,5 +21,12 @@ class ChatGPTRestController(
             @RequestBody completionRequestDTO: CompletionRequestDTO
     ): CompletionResponseDTO {
         return gptChatService.completion(completionRequestDTO)
+    }
+
+    @PostMapping("/completion/chat")
+    fun completionChat(
+            @RequestBody completionChatRequestDTO: CompletionChatDTO,
+    ): CompletionChatResponseDTO {
+        return gptChatService.completionChat(completionChatRequestDTO)
     }
 }
